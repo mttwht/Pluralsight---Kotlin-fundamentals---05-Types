@@ -1,8 +1,12 @@
 package com.mttwht
 
-class Person {
+open class Person {
     var firstName: String = ""
     var lastName: String = ""
 
-    fun getName(): String = "$firstName $lastName"
+    open fun getName(): String = "$firstName $lastName"
+}
+
+class Student : Person() {
+    override fun getName(): String = "$lastName, $firstName"
 }

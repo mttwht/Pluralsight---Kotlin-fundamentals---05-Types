@@ -1,5 +1,10 @@
 package com.mttwht
 
+fun main(args: Array<String>) {
+    val matt = Student(1, 10)
+    println(matt.id)
+}
+
 abstract class Person {
     var firstName: String = ""
     var lastName: String = ""
@@ -10,7 +15,19 @@ abstract class Person {
     abstract fun getAddress() : String
 }
 
-class Student : Person() {
+class Student(val id: Int, _year: Int) : Person() {
+    var year: Int
+    var tutor: String
+
+    init {
+        year = _year
+        tutor = ""
+    }
+
+    constructor(id: Int, _year: Int, tutor: String) : this(id, _year){
+        this.tutor = tutor
+    }
+
     override fun getAddress(): String =
         TODO("not implemented")
 

@@ -28,6 +28,12 @@ class Student(val id: Int, _year: Int) : Person() {
         this.tutor = tutor
     }
 
+    fun enrol(courseName: String) {
+        val course = Courses.allCourses
+            .filter { it.Title == courseName }
+            .firstOrNull()
+    }
+
     override fun getAddress(): String =
         TODO("not implemented")
 
